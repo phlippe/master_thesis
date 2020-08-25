@@ -1,0 +1,22 @@
+\section{Conclusion}
+\label{sec:conclusion}
+We present Categorical Normalizing Flows which learn a categorical, discrete distribution by a continuous normalizing flow.
+This is implemented by a joint objective to optimize the representation of categorical data in continuous latent space via variational inference, and the model likelihood of a normalizing flow on this space. 
+We thereby use variational inference only for representing the discrete data in continuous space, while all interactions between categorical variables should be learned in the normalizing flow.
+Hence, we enforce a factorized (approximate) posterior which maintains almost unique decoding while still allowing flexible encoding distributions. 
+In experiments on sets, graphs, and language modeling, we find that a plain mixture model is sufficient for modeling discrete distributions accurately while providing an efficient way for encoding and decoding categorical data. 
+In addition, we experience that the optimal encoding dimensionality of the continuous latent space does not only depend on the number of categories, but also on the complexity of the interactions among variables.
+
+Based on Categorical Normalizing Flows, we propose a normalizing flow on graph modeling, GraphCNF.
+In contrast to autoregressive models, GraphCNF is permutation-invariant to the order of nodes in a graph, meaning it assigns an equal likelihood to any permutation.
+Furthermore, we introduce a three-step generation process that adds the nodes, edge attributes, and adjacency matrix stepwise to the latent space to improve efficiency and stabilize training.
+Tested on the tasks of graph coloring and molecule generation, GraphCNF outperforms autoregressive and other one-shot approaches constituting a new state-of-the-art for normalizing flows on molecule generation. 
+
+These results emphasize the potential of normalizing flows on modeling categorical distributions, especially for such with non-sequential data. 
+The domains and applications we experimented on in this thesis are not exhaustive and Categorical Normalizing Flows can be applied to many more. 
+One application with increasing interest is parallel language modeling which could enable deep models like GPT3 \cite{GPT3} with a much greater generation speed.
+Furthermore, recent work by \citet{VFlow} has shown that combining dequantization with a variational framework for increasing the number of dimensions leads to considerable improvements in image modeling, which agrees with our findings on categorical data.
+
+Besides, the insights we gained in how Categorical Normalizing Flows model discrete distributions can potentially help to improve the design of Discrete Normalizing Flows.
+While continuous approaches have smooth gradients but inherit noise during training, discrete flows have to tackle optimization issues and their limited modeling capability.
+Combining continuous approaches with discrete can be a promising direction as in such models flows can choose between the best of both worlds, depending on the modeling task at hand.

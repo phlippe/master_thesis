@@ -1,0 +1,17 @@
+\markboth{Abstract}{ABSTRACT}
+\null\vspace{2cm}
+\begin{abstract}
+Despite their popularity, to date, the application of normalizing flows on categorical data stays limited.
+The current practice of using dequantization to map discrete data to a continuous space is inapplicable as categorical data has no intrinsic order.
+Instead, categorical data have complex and latent relations that must be inferred, like the synonymy between words. 
+In this thesis, we
+investigate \emph{Categorical Normalizing Flows}, that is normalizing flows for categorical data.
+By casting the encoding of categorical data in continuous space as a variational inference problem, we jointly optimize the continuous representation and the model likelihood.
+To maintain unique decoding, we learn a partitioning of the latent space by factorizing the posterior. 
+Meanwhile, the complex relations between the categorical variables are learned by the ensuing normalizing flow, thus maintaining a close-to exact likelihood estimate and making it possible to scale up to a large number of categories.
+Based on Categorical Normalizing Flows, we propose GraphCNF a permutation-invariant generative model on graphs, outperforming both one-shot and autoregressive flow-based state-of-the-art on molecule generation.\\
+
+%\noindent Paper: \href{https://arxiv.org/abs/2006.09790}{https://arxiv.org/abs/2006.09790}\\ 
+%Code: \href{https://github.com/phlippe/CategoricalNF}{https://github.com/phlippe/CategoricalNF}
+    
+\end{abstract}

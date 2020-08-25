@@ -1,0 +1,110 @@
+% \addtolength{\hoffset}{-2.25cm}
+% \addtolength{\textwidth}{4.5cm}
+% \addtolength{\voffset}{-3.25cm}
+% \addtolength{\textheight}{5cm}
+% \setlength{\parindent}{0in}
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+\usepackage[labelfont=bf]{caption}
+\usepackage[]{subcaption}
+\usepackage{multirow}
+\usepackage[dvipsnames]{xcolor}
+\definecolor{darkblue}{rgb}{0, 0, 0.5}
+\usepackage{blindtext} % Package to generate dummy text
+\usepackage{charter} % Use the Charter font
+\usepackage[utf8]{inputenc} % Use UTF-8 encoding
+\usepackage{microtype} % Slightly tweak font spacing for aesthetics
+\usepackage[english]{babel} % Language hyphenation and typographical rules
+\usepackage{amsthm, amsmath, amssymb, amsfonts, bbm, stmaryrd} % Mathematical typesetting
+\usepackage{float} % Improved interface for floating objects
+\usepackage[final, colorlinks=true, linkcolor=black, citecolor=darkblue, urlcolor=darkblue]{hyperref} % For hyperlinks in the PDF
+\usepackage{graphicx, multicol} % Enhanced support for graphics
+\usepackage{pgfplots} \pgfplotsset{compat=1.13}
+\usepackage{xcolor} % Driver-independent color extensions
+\usepackage{marvosym, wasysym} % More symbols
+\usepackage{rotating} % Rotation tools
+\usepackage{booktabs} % Enhances quality of tables
+%\usepackage[numbers,sort]{natbib}
+\usepackage[sort]{natbib}
+\renewcommand\cite{\citep}
+\usepackage{bm}
+\usepackage{wrapfig}
+\usepackage{enumitem}
+\usepackage{csquotes} % Context sensitive quotation facilities
+\usepackage[nodayofweek]{datetime} % Uses YEAR-MONTH-DAY format for dates
+\usepackage{acronym}
+\usepackage{adjustbox}
+\usepackage{pifont}
+\newcommand{\cmark}{\ding{51}}%
+\newcommand{\xmark}{\ding{55}}%
+\usepackage{nicefrac}
+\let\rfb\reflectbox
+\newcommand{\flipfracout}[2]{\rfb{\nicefrac{\rfb{#1}}{\rfb{#2}}}}
+\newcommand{\flipfrac}[2]{\flipfracout{\ensuremath{#1}}{\ensuremath{#2}}}
+
+\usepackage{fancyhdr} % Headers and footers
+\pagestyle{fancy} % All pages have headers and footers
+\fancyhead{}\renewcommand{\headrulewidth}{0pt} % Blank out the default header
+\fancyfoot[L]{} % Custom footer text
+\fancyfoot[C]{} % Custom footer text
+\fancyfoot[R]{\thepage} % Custom footer text
+% \newcommand{\note}[1]{\marginpar{\scriptsize \textcolor{red}{#1}}} % Enables comments in red on margin
+\newcommand{\TODO}[1]{\textbf{\textcolor{red}{#1}}}
+\newcommand{\note}[1]{\textit{\textcolor{blue}{Note: #1}}}
+\newcommand{\rephrase}[1]{\textcolor{orange}{#1}}
+\newcommand{\Comment}[1]{\textcolor{blue}{\textit{#1}}}
+\newcommand{\E}[0]{\mathbb{E}}
+\newcommand{\R}[0]{\mathbb{R}}
+
+%----------------------------------------------------------------------------------------
+
+\usepackage{fancyhdr}
+% Headers
+\usepackage{titlesec}
+\titleformat{\section}[hang]
+{\LARGE\bfseries}
+{Section \thesection.}{0.4em}{}
+\titlespacing{\section}{0pc}{0.5cm plus 0cm minus 0cm}{1cm plus .3cm minus .5cm}
+\titleformat{\subsection}[hang]
+{\fontsize{13pt}{12pt}\selectfont\bfseries}
+{\thesubsection.}{0.4em}{}
+\titlespacing{\subsection}{0pc}{0.5cm}{0.3cm}
+\titlespacing{\paragraph}{%
+  0pt}{%              left margin
+  0.6\baselineskip}{% space before (vertical)
+  0.75em}%               space after (horizontal)
+\titleformat{\paragraph}[runin]
+{\fontsize{10pt}{12pt}\selectfont\bfseries}
+{\theparagraph}{0.4em}{}
+
+% Figures
+\captionsetup{aboveskip=0.2cm,belowskip=0.2cm}
+
+
+% Acronyms 
+\acrodef{NF}{normalizing flow}
+\acrodef{VAE}{variational auto-encoder}
+\acrodef{GAN}{generative adversarial network}
+\acrodef{MC}{monte-carlo}
+\acrodef{IWVAE}{importance-weighted VAE}
+\acrodef{LDJ}{log-determinant Jacobian}
+\acrodef{SOTA}{state-of-the-art}
+\acrodef{CDF}{cumulative distribution function}
+\acrodef{VI}{variational inference}
+\acrodef{GNN}{graph neural network}
+\acrodef{ELBO}{evidence lower bound}
+
+\makeatletter
+\renewenvironment{abstract}{%
+    \if@twocolumn
+      \section*{\abstractname}%
+    \else %% <- here I've removed \small
+      \begin{center}%
+        {\bfseries \large\abstractname\vspace{\z@}}%  %% <- here I've added \large
+      \end{center}%
+      \quotation
+    \fi}
+    {\if@twocolumn\else\endquotation\fi}
+\makeatother
